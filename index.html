@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Anna Kate Black: AI projects with the problem, decisions, results and limits of each. Locker Lens prototype, Recruiting HQ, Occasion Retrieval and Restructuring Mentor.">
+<meta property="og:title" content="Anna Kate Black">
+<meta property="og:description" content="Anna Kate Black: AI projects with the problem, decisions, results and limits of each. Locker Lens prototype, Recruiting HQ, Occasion Retrieval and Restructuring Mentor.">
+<meta property="og:type" content="website">
+<style>img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Anna Kate Black</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
+<style>
+/* Layout: one reading column of long-form case files. Each project repeats the same labeled parts, and every project ends with a "What this doesn't show" panel. */
+:root{
+  --paper:#F6F4F6; --surface:#FFFFFF; --ink:#1D1820; --ink-2:#4A4250; --ink-3:#6C6372; --rule:#E2DCE4;
+  --plum:#6A2C4C; --plum-soft:#F3E8EE; --plum-line:#E1C9D6;
+  --ok:#2C6A4D; --ok-soft:#E2F0E7; --amber:#7A5410; --amber-soft:#F6EBD5; --blue:#1F5B78; --blue-soft:#E1EDF3;
+  --mark:#FFF1B8; --mark-ink:#5A4200;
+  --display:"Newsreader",Georgia,"Times New Roman",serif;
+  --body:"Public Sans","Segoe UI",system-ui,-apple-system,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --measure:42rem;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#141015; --surface:#1C171E; --ink:#EEE8F0; --ink-2:#C7BECD; --ink-3:#9E94A4; --rule:#2F2833;
+  --plum:#E6A9C7; --plum-soft:#2C1B25; --plum-line:#4A2E3D;
+  --ok:#8FD1AE; --ok-soft:#18301F; --amber:#EBC47C; --amber-soft:#35290F; --blue:#8DC7E3; --blue-soft:#142C38;
+  --mark:#4A3B08; --mark-ink:#FFE7A0;
+  color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --paper:#141015; --surface:#1C171E; --ink:#EEE8F0; --ink-2:#C7BECD; --ink-3:#9E94A4; --rule:#2F2833;
+  --plum:#E6A9C7; --plum-soft:#2C1B25; --plum-line:#4A2E3D;
+  --ok:#8FD1AE; --ok-soft:#18301F; --amber:#EBC47C; --amber-soft:#35290F; --blue:#8DC7E3; --blue-soft:#142C38;
+  --mark:#4A3B08; --mark-ink:#FFE7A0;
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.65 var(--body);-webkit-font-smoothing:antialiased}
+a{color:var(--plum);text-decoration-thickness:1px;text-underline-offset:3px}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:2px solid var(--plum);outline-offset:3px;border-radius:3px}
+p{margin:0}
+.wrap{max-width:calc(var(--measure) + 2rem);margin-inline:auto;padding-inline:1rem;padding-block:3.5rem 4rem;display:grid;gap:4.5rem}
+@media (min-width:720px){.wrap{padding-inline:1.5rem;max-width:calc(var(--measure) + 3rem)}}
+
+/* type scale */
+h1,h2,h3{font-family:var(--display);font-weight:500;color:var(--ink);margin:0;text-wrap:balance;letter-spacing:-.01em}
+h1{font-size:clamp(2.4rem,6vw,3.1rem);line-height:1.04;letter-spacing:-.02em}
+h2{font-size:clamp(1.9rem,4.4vw,2.35rem);line-height:1.1}
+h3{font-size:1.3rem;line-height:1.25}
+.label{font:500 .75rem/1.3 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+.lede{font-family:var(--display);font-size:1.32rem;line-height:1.45;color:var(--ink-2)}
+.small{font-size:.9rem;color:var(--ink-3)}
+
+/* intro */
+.intro{display:grid;gap:1.25rem}
+.intro .who{font:500 .95rem/1.5 var(--body);color:var(--ink-3)}
+.intro .lede{max-width:38rem}
+.contact{display:flex;flex-wrap:wrap;gap:.5rem 1.25rem;font-size:.95rem}
+.contact span{color:var(--ink-2);user-select:all}
+
+/* project index */
+.index{display:grid;gap:.75rem;grid-template-columns:minmax(0,1fr)}
+@media (min-width:560px){.index{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.index a{display:grid;gap:.5rem;align-content:start;padding:1rem 1.1rem;background:var(--surface);border:1px solid var(--rule);border-radius:10px;text-decoration:none;color:var(--ink)}
+.index a:hover{border-color:var(--plum-line)}
+.index b{font:500 1.15rem/1.25 var(--display)}
+.index span.d{font-size:.9rem;line-height:1.45;color:var(--ink-2)}
+
+/* status chips */
+.chip{display:inline-flex;align-items:center;gap:.4rem;width:max-content;max-width:100%;font:500 .72rem/1.2 var(--mono);letter-spacing:.06em;text-transform:uppercase;padding:.3rem .55rem;border-radius:999px}
+.chip::before{content:"";width:.45rem;height:.45rem;border-radius:50%;background:currentColor}
+.chip.shipped{background:var(--ok-soft);color:var(--ok)}
+.chip.prototype{background:var(--plum-soft);color:var(--plum)}
+.chip.earlier{background:var(--paper);color:var(--ink-2);box-shadow:inset 0 0 0 1px var(--rule)}
+
+/* source blocks: separate evidence from my own work vs public material about a shipped product */
+.source{display:grid;gap:1.25rem;padding:1.25rem;background:var(--surface);border:1px solid var(--rule);border-radius:12px;min-width:0}
+@media (min-width:720px){.source{padding:1.5rem}}
+.source-h{display:grid;gap:.35rem;padding-bottom:1rem;border-bottom:1px solid var(--rule)}
+.source-note{font:400 .82rem/1.5 var(--mono);color:var(--ink-3)}
+.source blockquote{background:var(--paper)}
+.source .links a{background:var(--paper)}
+.chip.running{background:var(--blue-soft);color:var(--blue)}
+.chip.experiment{background:var(--amber-soft);color:var(--amber)}
+
+/* principles */
+.principles{display:grid;gap:1.25rem}
+.principles ul{list-style:none;margin:0;padding:0;display:grid;gap:1rem}
+.principles li{display:grid;gap:.25rem;padding-top:1rem;border-top:1px solid var(--rule)}
+.principles li b{font:500 1.15rem/1.3 var(--display)}
+.principles li p{color:var(--ink-2)}
+
+/* project */
+.project{display:grid;gap:1.75rem;scroll-margin-top:1.5rem}
+.p-head{display:grid;gap:.9rem;padding-top:2rem;border-top:2px solid var(--ink)}
+.p-head .meta{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1rem}
+.part{display:grid;gap:.7rem;min-width:0}
+.part > p{color:var(--ink)}
+.part ul{margin:0;padding-left:1.15rem;display:grid;gap:.6rem}
+.part li::marker{color:var(--plum)}
+.part li b{font-weight:600}
+
+ol.steps{list-style:none;margin:0;padding:0;counter-reset:s;display:grid;gap:0;border-top:1px solid var(--rule)}
+ol.steps li{counter-increment:s;display:grid;grid-template-columns:2.25rem minmax(0,1fr);gap:.75rem;padding-block:.8rem;border-bottom:1px solid var(--rule)}
+ol.steps li::before{content:counter(s);font:500 .85rem/1.9 var(--mono);color:var(--plum)}
+ol.steps b{font-weight:600}
+
+ol.timeline{list-style:none;margin:0;padding:0;display:grid;gap:.9rem}
+ol.timeline li{display:grid;grid-template-columns:6.5rem minmax(0,1fr);gap:.75rem}
+ol.timeline time{font:500 .82rem/1.9 var(--mono);color:var(--ink-3);font-variant-numeric:tabular-nums}
+@media (max-width:480px){ol.timeline li{grid-template-columns:minmax(0,1fr);gap:.1rem}}
+
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(8.5rem,1fr));gap:.75rem;margin:0}
+.stats div{padding:.85rem 1rem;background:var(--surface);border:1px solid var(--rule);border-radius:10px}
+.stats dt{font:500 1.7rem/1.1 var(--display);color:var(--ink);font-variant-numeric:tabular-nums}
+.stats dd{margin:.25rem 0 0;font-size:.88rem;line-height:1.4;color:var(--ink-2)}
+
+figure{margin:0;display:grid;gap:.6rem;min-width:0}
+figure img{display:block;width:100%;max-width:100%;height:auto;border:1px solid var(--rule);border-radius:10px;background:var(--surface)}
+figcaption{font-size:.88rem;line-height:1.5;color:var(--ink-3)}
+
+blockquote{margin:0;padding:1.1rem 1.25rem;background:var(--surface);border:1px solid var(--rule);border-radius:10px;display:grid;gap:.5rem}
+blockquote p{font:500 1.35rem/1.35 var(--display);color:var(--ink)}
+blockquote cite{font-style:normal;font-size:.9rem;color:var(--ink-3)}
+
+.doesnt{padding:1.15rem 1.25rem;background:var(--plum-soft);border:1px solid var(--plum-line);border-radius:10px;display:grid;gap:.7rem}
+.doesnt .label{color:var(--plum)}
+.doesnt ul{margin:0;padding-left:1.15rem;display:grid;gap:.55rem}
+.doesnt li::marker{color:var(--plum)}
+
+.links{display:flex;flex-wrap:wrap;gap:.6rem}
+.links a{display:inline-flex;align-items:center;gap:.4rem;padding:.55rem .85rem;border:1px solid var(--rule);border-radius:8px;background:var(--surface);text-decoration:none;font-weight:500;font-size:.95rem}
+.links a:hover{border-color:var(--plum)}
+.links a::after{content:"\2197";font-size:.85em}
+
+mark.confirm{background:var(--mark);color:var(--mark-ink);padding:.05em .3em;border-radius:4px;font:500 .9em/1.4 var(--mono)}
+
+.also-built{display:grid;gap:.6rem;padding-top:1.5rem;border-top:1px solid var(--rule)}
+.also-built p{color:var(--ink-2)}
+footer{display:grid;gap:.5rem;padding-top:1.5rem;border-top:1px solid var(--rule);font-size:.9rem;color:var(--ink-3)}
+</style>
+</head>
+<body>
+<main class="wrap">
+
+  <header class="intro">
+    <p class="who">Finance, University of Georgia · Certificate in Artificial Intelligence for Business · May 2027</p>
+    <h1>Anna Kate Black</h1>
+    <p class="lede">I build AI workflows around problems I can see up close, then check whether they actually work. Claude writes most of my code. My part is choosing the problem, setting the rules the system has to follow, testing it in real use, and being clear about what the results do and don't show.</p>
+    <div class="contact">
+      <span>annakateblack7@gmail.com</span>
+      <a href="https://www.linkedin.com/in/annakateblack/">LinkedIn</a>
+      <a href="https://github.com/annakateblack">GitHub</a>
+    </div>
+  </header>
+
+  <nav class="index" aria-label="Projects">
+    <a href="#locker-lens">
+      <span class="chip prototype">Prototype</span>
+      <b>Locker Lens</b>
+      <span class="d">A working photo-search prototype I built as a Locker user. It informed the feature Locker launched in July 2026.</span>
+    </a>
+    <a href="#recruiting-hq">
+      <span class="chip running">Runs daily</span>
+      <b>Recruiting HQ</b>
+      <span class="d">An agent that runs my job search back office twice a day and only ever writes drafts.</span>
+    </a>
+    <a href="#occasion-retrieval">
+      <span class="chip experiment">Experiment</span>
+      <b>Occasion Retrieval</b>
+      <span class="d">A tested ranking system for rental dresses, with a controlled experiment on image understanding.</span>
+    </a>
+    <a href="#restructuring-mentor">
+      <span class="chip earlier">Earlier build</span>
+      <b>Restructuring Mentor</b>
+      <span class="d">A daily email tutor that turned restructuring news into lessons before my BRG internship.</span>
+    </a>
+  </nav>
+
+  <section class="principles" aria-labelledby="h-how">
+    <p class="label" id="h-how">How I build with AI</p>
+    <ul>
+      <li><b>Rules first, a model where rules can't see.</b><p>If a simple, tested rule can get a fact right, I use the rule. A model handles what rules can't, like reading a photo.</p></li>
+      <li><b>A person approves anything that leaves the system.</b><p>Recruiting HQ writes drafts in my Gmail. It cannot send, accept a meeting or submit an application.</p></li>
+      <li><b>Say what the result doesn't show.</b><p>Every project below ends with its limits. In Occasion Retrieval, the headline score was zero, and I reported it.</p></li>
+    </ul>
+  </section>
+
+  <!-- ===================== LOCKER LENS ===================== -->
+  <article class="project" id="locker-lens" aria-labelledby="h-lens">
+    <header class="p-head">
+      <div class="meta"><span class="chip prototype">Prototype</span><span class="label">Built April 2026 · Locker launched its own version in July 2026</span></div>
+      <h2 id="h-lens">Locker Lens</h2>
+      <p class="lede">As a Locker user, I built a working prototype of photo-to-product search on Locker's live site and demoed it to their CEO and Head of Product. It informed Locker Lens, the feature Locker's own team later built and launched.</p>
+    </header>
+
+    <section class="source" aria-labelledby="h-lens-proto">
+      <div class="source-h">
+        <h3 id="h-lens-proto">The prototype I built</h3>
+        <p class="source-note">April 2026. Described from my extension code, my demo recording and my emails with Locker. The code and recording are not published here.</p>
+      </div>
+
+      <div class="part">
+        <p class="label">Why</p>
+        <p>After a call with Locker's Head of Product, I asked friends who use Locker every day what was missing. The same answer kept coming back: there was no quick way to save something you found in a store. Getting it into Locker meant opening Google Lens, taking a photo, finding the listing, copying the link and pasting it into the app. Half the time, my friends just gave up.</p>
+      </div>
+
+      <div class="part">
+        <p class="label">What it did</p>
+        <ol class="steps">
+          <li><span>A <b>Lens</b> button appeared on the Locker profile page, next to Edit and Share.</span></li>
+          <li><span>Clicking it opened a window to drag in or browse for a photo.</span></li>
+          <li><span>The photo went to a temporary image host (imgBB) to get a link, and that link went to Google Lens through the Serper API.</span></li>
+          <li><span>Product matches from real retailers came back in a gallery, and the user picked the ones they wanted.</span></li>
+          <li><span>The picks appeared in the Wants grid as product cards matching Locker's layout, marked with a small Locker Lens badge and linking to the retailer's page. A search took about three seconds.</span></li>
+        </ol>
+      </div>
+
+      <div class="part">
+        <p class="label">Decisions I made</p>
+        <ul>
+          <li><b>A Chrome extension on the live site.</b> I had no access to Locker's code or database, so injecting into the real page was the only way to show the idea inside Locker's actual interface. I was clear that a real version would be built into the app.</li>
+          <li><b>Make it look native.</b> I inspected Locker's buttons in the browser's developer tools and matched their shape, size, type and colors, so the Lens button sat beside Edit and Share as if Locker had made it. The script found the Share button by the stable part of its name, because the rest changes every time the site updates.</li>
+          <li><b>Use an existing visual search service.</b> In a proposal I wrote on April 5, I recommended buying visual search through an API first and building a custom model only once usage justified the cost. The prototype followed that approach.</li>
+          <li><b>Read-only.</b> Nothing was written to Locker's systems. It ran in my browser on my own account, but the whole flow worked end to end: capture, search, choose, save.</li>
+          <li><b>Test past the first use case.</b> After the demo call, I tried social media screenshots and photos of people without changing any code, and it found matches for both.</li>
+        </ul>
+      </div>
+
+      <div class="part">
+        <p class="label">My role and how I used AI</p>
+        <p>I built it with Claude, which wrote the extension code. I did the user research, chose the approach, gathered Locker's styles from the live site, tested it on my own photos and pitched it. I sent the demo recording on April 14 and walked their CEO and Head of Product through it on April 15. On that call the Head of Product pressed me on the image pipeline, my design choices and the limits, and that afternoon the CEO asked whether I would join as a Product AI intern.</p>
+      </div>
+
+      <div class="part">
+        <p class="label">What I learned</p>
+        <p>A working prototype got more attention than a list of ideas would have, and I could design around having no backend access.</p>
+      </div>
+
+      <div class="links">
+        <a href="https://busn4400.wordpress.com/2026/04/13/i-cold-emailed-a-startup-i-love-then-i-built-a-feature-for-them/">My class blog post on building it, April 2026</a>
+      </div>
+    </section>
+
+    <section class="source" aria-labelledby="h-lens-shipped">
+      <div class="source-h">
+        <h3 id="h-lens-shipped">What Locker launched</h3>
+        <p class="source-note">July 2026. From Locker's public App Store release notes and launch posts.</p>
+      </div>
+      <p>Locker's team built Locker Lens into the app and announced it in the App Store release notes for version 2.2.38. Shoppers upload an in-store photo, a screenshot from social media or an inspiration picture, and Locker finds the exact item or similar products to save.</p>
+      <blockquote>
+        <p>"1,500+ uses since the first wave went live in the App Store"</p>
+        <cite>Mackenzie Tjogas, Head of Product at Locker, in her launch post on July 22, 2026</cite>
+      </blockquote>
+      <div class="links">
+        <a href="https://www.linkedin.com/posts/mackenzietjogas_locker-lens-is-live-this-feature-is-one-ugcPost-7485825638025584640-A8lb/">Launch post from Locker's Head of Product</a>
+        <a href="https://www.linkedin.com/posts/mary-grace-scully-381a20113_i-spy-with-my-little-eye-locker-lens-ugcPost-7486129600587075585-FoZc/">Launch video from Locker's Head of Marketing</a>
+      </div>
+    </section>
+
+    <div class="doesnt">
+      <p class="label">What this doesn't show</p>
+      <ul>
+        <li>None of my code is in the product. Locker's team wrote the production version; my prototype showed the idea and a working flow that informed it.</li>
+        <li>The prototype only ran in my own browser, as a demo. It was never released to users.</li>
+        <li>The usage figure is Locker's, from launch week, and reflects their product, not my prototype.</li>
+      </ul>
+    </div>
+  </article>
+
+  <!-- ===================== RECRUITING HQ ===================== -->
+  <article class="project" id="recruiting-hq" aria-labelledby="h-hq">
+    <header class="p-head">
+      <div class="meta"><span class="chip running">Runs daily</span><span class="label">Personal · Since October 6, 2026</span></div>
+      <h2 id="h-hq">Recruiting HQ</h2>
+      <p class="lede">An AI agent that runs the back office of my job search twice a day. It reads my recruiting email, rechecks which roles are still open, finds people worth contacting and writes reply drafts for me to review. It cannot send anything.</p>
+    </header>
+
+    <div class="part">
+      <p class="label">The problem</p>
+      <p>By early October I had applied to about 30 roles and had 17 networking conversations going. Deadlines, replies and follow-ups were spread across Gmail threads, applicant portals and my own notes, and nothing tied them together.</p>
+    </div>
+
+    <figure>
+      <img src="assets/hq-today.webp" width="1600" height="1000" alt="The Recruiting HQ Today page showing three ranked tasks, an agenda for the next two weeks and new updates since the last visit.">
+      <figcaption>The hub page, shown here with made-up companies and people. The real one holds my actual pipeline, so it stays private.</figcaption>
+    </figure>
+
+    <div class="part">
+      <p class="label">What each run does, at noon and midnight</p>
+      <ol class="steps">
+        <li><span><b>Email audit.</b> Reads new recruiting mail and my sent mail, then updates where each application and conversation stands. A scheduling request is not logged as an interview until a confirmation arrives.</span></li>
+        <li><span><b>Role check.</b> Rechecks each posting on the company's own careers site. A role is marked closed only after it is missing on two checks in a row.</span></li>
+        <li><span><b>People.</b> Finds a few relevant contacts from public sources, and searches my Gmail first so it never suggests someone I already emailed.</span></li>
+        <li><span><b>Drafts.</b> Writes replies and follow-ups inside the right Gmail thread, with a bracket wherever it needs a fact only I have.</span></li>
+        <li><span><b>Prep.</b> Writes interview and call prep notes from the actual invite emails.</span></li>
+        <li><span><b>Report.</b> Updates the hub page and emails me only when something new needs me.</span></li>
+      </ol>
+    </div>
+
+    <div class="part">
+      <p class="label">Rules I set</p>
+      <ul>
+        <li><b>Drafts only.</b> It cannot send, reply, accept a meeting or submit an application. The one email it sends is a short summary, to me.</li>
+        <li><b>Every fact links to its source,</b> an email or the company's careers page. Missing information shows as unknown, never as "nothing due."</li>
+        <li><b>My decisions win.</b> If I mark a role Pass or a person Do not contact, it stops. It never overwrites a field I edited. When new evidence conflicts with my call, it flags it for me instead.</li>
+        <li><b>Email is data, not instructions.</b> Text inside a message can't tell it to do anything.</li>
+        <li><b>No paid lookups.</b> It uses free search only on the contact database.</li>
+      </ul>
+    </div>
+
+    <figure>
+      <img src="assets/hq-draft.webp" width="1600" height="1000" alt="A reply draft open for review. A highlighted bracket asks for available times, and a note says nothing sends without sign-off.">
+      <figcaption>A reply draft waiting for review, with demo data. The highlighted bracket is the one fact it needs from me.</figcaption>
+    </figure>
+
+    <div class="part">
+      <p class="label">How it got here</p>
+      <ol class="timeline">
+        <li><time datetime="2026-09-08">Sept 8</time><p>Started with a weekday 7 AM inbox triage that drafts replies and emails me a one-minute summary. It still runs.</p></li>
+        <li><time datetime="2026-10-06">Oct 6, midday</time><p>Added three separate scheduled tasks for open roles, networking targets and my Gmail pipeline, all writing to one shared hub. Two of the three failed on their first run when they hit usage limits.</p></li>
+        <li><time datetime="2026-10-06">Oct 6, 2 PM</time><p>Rebuilt them as one cycle. A run lock stops two runs from overlapping, and every write checks the record's version so it never overwrites a change I made on the page.</p></li>
+        <li><time datetime="2026-10-07">Since Oct 7</time><p>It has run at noon and midnight every day.</p></li>
+      </ol>
+    </div>
+
+    <dl class="stats" aria-label="Scale as of October 10, 2026">
+      <div><dt>52</dt><dd>companies tracked</dd></div>
+      <div><dt>37</dt><dd>roles checked against official postings</dd></div>
+      <div><dt>49</dt><dd>applications and conversations followed</dd></div>
+      <div><dt>18</dt><dd>drafts written for my review</dd></div>
+    </dl>
+    <p class="small">As of October 10, 2026. In its first week it caught a reply from a contact offering to refer me and had a draft response in my Gmail by the next update.</p>
+
+    <div class="part">
+      <p class="label">My role and how I used AI</p>
+      <p>I built it in conversation with Claude. I described the workflow and the rules; Claude wrote the run instructions and built the hub page, which runs as Claude scheduled tasks with my Gmail and a contact database connected. When a run failed or did something I didn't want, I changed the rules. I use it every day.</p>
+    </div>
+
+    <div class="doesnt">
+      <p class="label">What this doesn't show</p>
+      <ul>
+        <li>It finds and tracks faster than I decide. In week one, its follow-up drafts sat unsent for days, so the bottleneck moved from finding information to my own review.</li>
+        <li>When I rewrite a draft, the next run records that as a pattern instead of assuming its drafts were good. In week one I replaced its reply with my own wording and wrote my own thank-you notes.</li>
+        <li>It can't read LinkedIn, so the contacts it finds are verified from public pages only.</li>
+        <li>Next, I want it to find more relevant people and get better at ranking who is actually worth contacting.</li>
+      </ul>
+    </div>
+  </article>
+
+  <!-- ===================== OCCASION RETRIEVAL ===================== -->
+  <article class="project" id="occasion-retrieval" aria-labelledby="h-occ">
+    <header class="p-head">
+      <div class="meta"><span class="chip experiment">Experiment</span><span class="label">Personal · September 2026 · Code on GitHub</span></div>
+      <h2 id="h-occ">Occasion Retrieval</h2>
+      <p class="lede">Can a dress's photo and its caption, combined, rank rental listings better than either one alone?</p>
+    </header>
+
+    <div class="part">
+      <p class="label">The problem</p>
+      <p>Students at UGA rent formal dresses from student-run Instagram accounts, and I had 221 rental posts saved. Picking one means checking size, price, availability on the date, whether it fits the occasion and season, and whether I like it. None of that is structured. It is free text, written by a different person every time, in a caption that was never meant to be searched.</p>
+      <p>It grew out of research I wrote up in May on why fashion search fails: shoppers search by occasion and feeling, like "something for graduation week," while listings read like spec sheets. In a nine-product test, GPT-4o inferred occasion and style from product details, while GPT-4o-mini and Gemini Flash returned flat descriptions. After Locker Lens, I also wanted a project that went deeper than calling one API, and that I understood well enough to explain every design decision.</p>
+    </div>
+
+    <div class="part">
+      <p class="label">What I built</p>
+      <p>A pipeline that reads my own Instagram data export, with no login and no scraping. It pulls facts out of captions with tested rules, removes dresses that fail hard limits like size, price and date, and ranks the rest on six scores you can trace. Of 221 saved posts, 157 were dresses and 149 made it into the final ranking.</p>
+      <p>Then the experiment: Claude's vision model reads the photos to fill in details captions leave out, like neckline, silhouette and color, and the exact same ranker runs again.</p>
+    </div>
+
+    <div class="part">
+      <p class="label">Decisions that shaped it</p>
+      <ul>
+        <li><b>Rules for simple facts.</b> My parser read "$50" but missed "50$", so a listing that clearly stated its price looked like it had none. The fix was a rule and a test, which is cheaper and more predictable than asking a model every time.</li>
+        <li><b>The caption wins on what the renter stated:</b> size, price and dates. Vision can only fill a blank, and only above 0.55 confidence. When the two disagree, the conflict is recorded instead of silently resolved.</li>
+        <li><b>Unknown stays unknown.</b> Scoring a missing neckline as zero would rank how chatty a caption is, not how well the dress fits the occasion.</li>
+        <li><b>One difference between the two versions.</b> Both use the same ranker, weights and filters, so any change comes from the photos.</li>
+        <li><b>No Instagram credentials, ever.</b> Real photos, captions, usernames and my labels stay on my computer and never go into the repository.</li>
+      </ul>
+    </div>
+
+    <div class="part">
+      <p class="label">Status</p>
+      <p>It works today, on my laptop. It reads my Instagram export, pulls facts out of captions, filters and ranks dresses for an event, explains every score, and runs as a small local app where I type a request like "a Christmas cocktail dress, festive and sparkly" and get ranked cards back. The vision experiment ran live on the labeled dresses. Not built yet: the database, image embeddings, taste learned from my saved items, and any hosted version anyone else can use.</p>
+    </div>
+
+    <figure>
+      <img src="assets/occasion-merge-policy.webp" width="1921" height="1080" alt="Slide titled Who has authority over which fact, a table of five situations and what happens in each, such as caption wins when the caption states the value.">
+      <figcaption>From my slides: who has authority over which fact.</figcaption>
+    </figure>
+
+    <div class="part">
+      <p class="label">Result</p>
+      <p>The first live run sent the photos of my labeled dresses to Claude's vision model. All 7 reachable photos came back, with 91% of the requested visual fields filled. The top-10 score (nDCG@10) was 0 in both versions, because none of the dresses graded as good matches made the top 10 either way. The two good matches the system could reach moved from rank 90 to 35 and from rank 89 to 44, and 5 of the 6 labeled dresses I could compare moved up. Only 7 of 157 dresses were enriched, so this shows the photos moved the right items. It does not show the system got better overall.</p>
+    </div>
+
+    <figure>
+      <img src="assets/occasion-rank-movement.webp" width="1921" height="1080" alt="Slide showing two labeled dresses moving up the ranking, from rank 90 to 35 and from rank 89 to 44, after vision filled in missing details.">
+      <figcaption>The two reachable good matches, before and after vision filled in their missing details. Same ranker, same weights.</figcaption>
+    </figure>
+
+    <div class="part">
+      <p class="label">My role and how I used AI</p>
+      <p>Claude wrote the code, and the commit history shows every step. I chose the problem and the question, set the privacy rules, ran it on my own data, caught the price bug in my own listings, and decided what the result can and can't claim. I picked the 8 real dresses used as the test set; Claude assigned each one's grade for each event. I built the slides for my AI research group at UGA.</p>
+    </div>
+
+    <div class="doesnt">
+      <p class="label">What this doesn't show</p>
+      <ul>
+        <li>The test set is small and its grades are not mine: 8 dresses I picked, graded by Claude. For the event in this experiment, 3 were graded as good matches.</li>
+        <li>The score weights are hand-set, not learned from data.</li>
+        <li>Only the labeled dresses were enriched, 4.5% of the catalog. Image links from Instagram posts are also unreliable.</li>
+        <li>Next, I would enrich the whole catalog and label more dresses near the top of the ranking before adding anything more complex.</li>
+      </ul>
+    </div>
+
+    <div class="links">
+      <a href="https://github.com/annakateblack/occasion-retrieval">Code, tests and decisions on GitHub</a>
+      <a href="https://github.com/annakateblack/occasion-retrieval/blob/main/docs/VLM_EXPERIMENT_RESULTS.md">Full experiment write-up</a>
+      <a href="https://busn4400.wordpress.com/2026/05/01/why-search-is-broken-my-two-week-descent-into-the-fashion-data-dilemma/">My research post on fashion search, May 2026</a>
+    </div>
+  </article>
+
+  <!-- ===================== RESTRUCTURING MENTOR ===================== -->
+  <article class="project" id="restructuring-mentor" aria-labelledby="h-rx">
+    <header class="p-head">
+      <div class="meta"><span class="chip earlier">Earlier build</span><span class="label">Personal · February to April 2026</span></div>
+      <h2 id="h-rx">Restructuring Mentor</h2>
+      <p class="lede">A script that emailed me a restructuring lesson every morning before my summer at BRG, built from that day's news and designed to get harder as I learned.</p>
+    </header>
+
+    <div class="part">
+      <p class="label">The problem</p>
+      <p>I had 100 days before starting on BRG's turnaround and restructuring team. A UGA student who had done the same internship told me the hard part wasn't the news. It was the legal vocabulary, the jargon, and doing restructuring work in Excel and PowerPoint without hesitating. A news digest wouldn't teach that, so I wanted a tutor that used each day's news to teach the job.</p>
+    </div>
+
+    <div class="part">
+      <p class="label">What it did each morning</p>
+      <ol class="steps">
+        <li><span>At 6:00 AM, Windows Task Scheduler woke my laptop and ran the Python script.</span></li>
+        <li><span>Serper's search API pulled the top three results for Chapter 11 and distressed-debt news.</span></li>
+        <li><span>Claude, prompted as a senior restructuring mentor, wrote a six-part lesson: a summary, why the news matters, an interview question with a worked answer, one vocabulary term, an Excel exercise and a PowerPoint exercise.</span></li>
+        <li><span>Resend emailed the lesson to me.</span></li>
+        <li><span>The script saved the new term to a flashcard file and logged what I had covered for the next day.</span></li>
+      </ol>
+    </div>
+
+    <div class="part">
+      <p class="label">Decisions I made</p>
+      <ul>
+        <li><b>A search API instead of a scraper.</b> News sites block scrapers; Serper returns results as structured data.</li>
+        <li><b>Memory so it didn't repeat itself.</b> Before each call, the script read a learning log and told Claude what I already knew and to make the lesson slightly harder.</li>
+        <li><b>Flashcards without copying.</b> The prompt asked Claude to end with a hidden "term | definition" line, which the script split off before sending and added to a spreadsheet file.</li>
+        <li><b>Reliability over length.</b> My first version asked for 25,000 tokens per email, and requests that long ran past the API's time limit and crashed. I cut it to 8,000 so it would finish every morning.</li>
+        <li><b>Keys out of the code and no server bill.</b> API keys lived in a local file, and the laptop's scheduler replaced a paid cloud server.</li>
+      </ul>
+    </div>
+
+    <div class="part">
+      <p class="label">My role and how I used AI</p>
+      <p>I built it in Python with Claude's help, and Claude wrote each day's lesson. I spent about 30 minutes each morning on the lesson and its exercises, including building a debt waterfall from mock numbers.</p>
+    </div>
+
+    <div class="doesnt">
+      <p class="label">What this doesn't show</p>
+      <ul>
+        <li>It took the top three search results for the same query every day. By April, several lessons opened with 2025 figures, so the top result was not always current news.</li>
+        <li>My inbox has 20 of its emails, sent between February 23 and April 21. The code isn't published here; my blog post walks through it.</li>
+      </ul>
+    </div>
+
+    <div class="links">
+      <a href="https://busn4400.wordpress.com/2026/02/23/100-days-to-brg-building-an-autonomous-ai-mentor-to-cure-my-internship-imposter-syndrome/">My class blog post walking through the build, February 2026</a>
+    </div>
+  </article>
+
+  <section class="also-built" aria-labelledby="h-earlier">
+    <p class="label" id="h-earlier">Earlier build</p>
+    <h3>Resume tool</h3>
+    <p class="small">January 2026 · Personal</p>
+    <p>Friends kept asking me to fix their resumes, and each one took me about two hours. I built a two-step tool: a chat that asks questions and rewrites bullets to fixed content rules, then a script that formats the result into a Word document with set fonts, margins and one-line bullets. It brought a resume down to about 20 minutes. A classmate asked whether it invents numbers when a bullet has none. Its rules ask for a number in every bullet, so every figure needs a person to check it.</p>
+    <p><a href="https://busn4400.wordpress.com/2026/01/31/how-i-used-ai-to-stop-spending-2-hours-on-my-friends-resumes-because-i-cant-say-no/">My class blog post on the resume tool</a></p>
+  </section>
+
+  <footer>
+    <p>Built with Claude. Updated October 2026.</p>
+    <p>annakateblack7@gmail.com · <a href="https://www.linkedin.com/in/annakateblack/">LinkedIn</a> · <a href="https://github.com/annakateblack">GitHub</a></p>
+  </footer>
+</main>
+</body>
+</html>

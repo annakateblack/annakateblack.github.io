@@ -7,6 +7,19 @@ Anna Kate Black
 I build AI workflows around problems I can see up close, then check whether they actually work. Claude writes most of my code. My part is choosing the problem, setting the rules the system has to follow, testing it in real use, and being clear about what the results do and don't show.
 annakateblack7@gmail.com LinkedIn GitHub
 
+## Section: In 30 seconds
+In 30 seconds
+I find problems worth solving.
+I asked friends who use Locker every day what was missing, then built a working prototype that informed the feature Locker launched. Locker Lens
+I build AI systems I actually use.
+Recruiting HQ has run my job search twice a day since October 6, tracking 52 companies and 49 applications and conversations. Recruiting HQ
+I keep a person in charge.
+My agents draft and I decide. Every fact links to its source, and I spell out which rules are instructions and which are permissions. Who decides what
+I test before I claim.
+In a controlled experiment backed by 305 automated tests, I reported a headline score of zero and the narrower result the data did support. Occasion Retrieval
+I pair finance with AI research.
+Turnaround and restructuring at BRG, private equity real estate at South Street Partners, and agentic AI research with Professor Gerald Kane, who wrote about the Locker story. Background
+
 ## Section: How she builds with AI
 How I build with AI
 - Rules first, a model where rules can't see.

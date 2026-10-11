@@ -90,6 +90,16 @@ h3{font-size:1.3rem;line-height:1.25}
 .chip.running{background:var(--blue-soft);color:var(--blue)}
 .chip.experiment{background:var(--amber-soft);color:var(--amber)}
 
+/* in 30 seconds: capability, then the evidence and where to see it */
+.glance{display:grid;gap:.9rem}
+.glance dl{margin:0;display:grid;gap:0;border-top:1px solid var(--rule)}
+.glance dl > div{display:grid;gap:.2rem;padding-block:.75rem;border-bottom:1px solid var(--rule)}
+@media (min-width:720px){.glance dl > div{grid-template-columns:13rem minmax(0,1fr);gap:1.25rem}}
+.glance dt{font:500 1.08rem/1.35 var(--display);color:var(--ink)}
+.glance dd{margin:0;color:var(--ink-2);font-size:.97rem}
+.glance dd > a:last-child{font-weight:600;white-space:nowrap}
+.glance dd > a:last-child::after{content:" \2192"}
+
 /* principles */
 .principles{display:grid;gap:1.25rem}
 .principles ul{list-style:none;margin:0;padding:0;display:grid;gap:1rem}
@@ -216,6 +226,17 @@ footer{display:grid;gap:.5rem;padding-top:1.5rem;border-top:1px solid var(--rule
       <a href="https://github.com/annakateblack">GitHub</a>
     </div>
   </header>
+
+  <section class="glance" aria-labelledby="h-glance">
+    <p class="label" id="h-glance">In 30 seconds</p>
+    <dl>
+      <div><dt>I find problems worth solving.</dt><dd>I asked friends who use Locker every day what was missing, then built a working prototype that informed the feature Locker launched. <a href="#locker-lens">Locker Lens</a></dd></div>
+      <div><dt>I build AI systems I actually use.</dt><dd>Recruiting HQ has run my job search twice a day since October 6, tracking 52 companies and 49 applications and conversations. <a href="#recruiting-hq">Recruiting HQ</a></dd></div>
+      <div><dt>I keep a person in charge.</dt><dd>My agents draft and I decide. Every fact links to its source, and I spell out which rules are instructions and which are permissions. <a href="#recruiting-hq">Who decides what</a></dd></div>
+      <div><dt>I test before I claim.</dt><dd>In a controlled experiment backed by 305 automated tests, I reported a headline score of zero and the narrower result the data did support. <a href="#occasion-retrieval">Occasion Retrieval</a></dd></div>
+      <div><dt>I pair finance with AI research.</dt><dd>Turnaround and restructuring at BRG, private equity real estate at South Street Partners, and agentic AI research with Professor Gerald Kane, who <a href="https://www.linkedin.com/feed/update/urn:li:activity:7452377118606372867/">wrote about the Locker story</a>. <a href="#background">Background</a></dd></div>
+    </dl>
+  </section>
 
   <nav class="index" aria-label="Projects">
     <a href="#locker-lens">

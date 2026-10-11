@@ -53,7 +53,7 @@ My role and how I used AI
 I built it with Claude, which wrote the extension code. I did the user research, chose the approach, gathered Locker's styles from the live site, tested it on my own photos and pitched it. I sent the demo recording on April 14 and walked their CEO and Head of Product through it on April 15. On that call the Head of Product pressed me on the image pipeline, my design choices and the limits, and that afternoon the CEO asked whether I would join as a Product AI intern.
 What I learned
 A working prototype got more attention than a list of ideas would have, and I could design around having no backend access.
-My class blog post on building it, April 2026
+My class blog post on building it, April 2026 Professor Gerald Kane's write-up, April 2026 Terry College's story, June 2026
 
 ## Section: What Locker launched
 ### What Locker launched
@@ -245,7 +245,7 @@ Apollo Society 2024 to 2025
 Sector analyst for Consumer Discretionary in a student-run portfolio.
 Outside work: I climbed Kilimanjaro at 16 because my dad asked at dinner, I've gone skydiving twice and jumped first both times, I'm up at 5 AM training for a marathon, and I believe anyone can learn to like any food (pickles, wasabi and matcha are my proof).
 ### In the news
-The Red & Black: UGA club field hockey wins its Challenge Cup debut, November 2025
+Terry College · "Student vibe-codes her way to a job offer" · June 2026 Professor Gerald Kane · "My Student Cold-Emailed a Startup. The CEO Built a Role Around Her." · April 2026 Terry College on LinkedIn · June 2026 The Red & Black · UGA club field hockey wins its Challenge Cup debut · November 2025
 Built with Claude. Updated October 2026.
 annakateblack7@gmail.com · LinkedIn · GitHub
 
@@ -270,5 +270,7 @@ annakateblack7@gmail.com · LinkedIn · GitHub
 - Captaincy: every captain role she has held was chosen by a team vote, including UGA Club Field Hockey.
 - Challenge Cup, November 2025: as junior co-captain, she scored the second goal in UGA club field hockey's 2-0 win in the Challenge Cup final, playing through a broken finger. The Red & Black covered the team's win in its Challenge Cup debut and quoted her on competing at the highest level from the first day.
 - Test scores: ACT 35.
+- Press about her Locker prototype: Professor Gerald Kane wrote about it on LinkedIn in April 2026 under the title "My Student Cold-Emailed a Startup. The CEO Built a Role Around Her," describing how Locker's CEO created a Product AI Intern role around the way she worked. The Terry College of Business published "Student vibe-codes her way to a job offer" in June 2026 and shared it on LinkedIn. Both are linked under "In the news" on her site.
+- How the Locker story started: she reached out to companies whose products she used, and Locker's team was the one that responded.
 - Favorite class: BUSN 4400 at UGA with Professor Kane, a three-hour AI discussion class. It drew people who wanted to build, push back, and debate AI news and ethics, and everyone pushed each other. It was not a typical classroom, which is why she loved it.
 - Food hot take: she believes anyone can learn to like any food if they keep trying it and work to appreciate it. Pickles, wasabi and matcha all started as foods she didn't like but wanted to, and now she loves all three.

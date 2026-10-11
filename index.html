@@ -140,6 +140,16 @@ blockquote cite{font-style:normal;font-size:.9rem;color:var(--ink-3)}
 .links a:hover{border-color:var(--plum)}
 .links a::after{content:"\2197";font-size:.85em}
 
+/* who decides what: model judgment vs fixed rules vs my decisions */
+.decide{display:grid;gap:.75rem}
+.decide > div{--c:var(--plum);display:grid;gap:.5rem;align-content:start;padding:1rem 1.15rem;background:var(--surface);border:1px solid var(--rule);border-left:4px solid var(--c);border-radius:10px;min-width:0}
+.decide .judgment{--c:var(--blue)}
+.decide .mine{--c:var(--ok)}
+.decide h4{margin:0;font:600 1rem/1.3 var(--body);color:var(--c)}
+.decide .sub{font-size:.88rem;color:var(--ink-3)}
+.decide ul{margin:0;padding-left:1.15rem;display:grid;gap:.5rem}
+.decide li::marker{color:var(--c)}
+
 mark.confirm{background:var(--mark);color:var(--mark-ink);padding:.05em .3em;border-radius:4px;font:500 .9em/1.4 var(--mono)}
 
 .also-built{display:grid;gap:.6rem;padding-top:1.5rem;border-top:1px solid var(--rule)}
@@ -170,7 +180,7 @@ footer{display:grid;gap:.5rem;padding-top:1.5rem;border-top:1px solid var(--rule
     <a href="#recruiting-hq">
       <span class="chip running">Runs daily</span>
       <b>Recruiting HQ</b>
-      <span class="d">An agent that runs my job search back office twice a day and only ever writes drafts.</span>
+      <span class="d">An agent that runs my job search back office twice a day. It writes drafts; I do all the sending.</span>
     </a>
     <a href="#occasion-retrieval">
       <span class="chip experiment">Experiment</span>
@@ -188,7 +198,7 @@ footer{display:grid;gap:.5rem;padding-top:1.5rem;border-top:1px solid var(--rule
     <p class="label" id="h-how">How I build with AI</p>
     <ul>
       <li><b>Rules first, a model where rules can't see.</b><p>If a simple, tested rule can get a fact right, I use the rule. A model handles what rules can't, like reading a photo.</p></li>
-      <li><b>A person approves anything that leaves the system.</b><p>Recruiting HQ writes drafts in my Gmail. It cannot send, accept a meeting or submit an application.</p></li>
+      <li><b>A person approves anything that leaves the system.</b><p>Recruiting HQ writes drafts in my Gmail, and I send everything myself. Its rules forbid sending, accepting a meeting or submitting an application.</p></li>
       <li><b>Say what the result doesn't show.</b><p>Every project below ends with its limits. In Occasion Retrieval, the headline score was zero, and I reported it.</p></li>
     </ul>
   </section>
@@ -280,7 +290,7 @@ footer{display:grid;gap:.5rem;padding-top:1.5rem;border-top:1px solid var(--rule
     <header class="p-head">
       <div class="meta"><span class="chip running">Runs daily</span><span class="label">Personal · Since October 6, 2026</span></div>
       <h2 id="h-hq">Recruiting HQ</h2>
-      <p class="lede">An AI agent that runs the back office of my job search twice a day. It reads my recruiting email, rechecks which roles are still open, finds people worth contacting and writes reply drafts for me to review. It cannot send anything.</p>
+      <p class="lede">An AI agent that runs the back office of my job search twice a day. It reads my recruiting email, rechecks which roles are still open, finds people worth contacting and writes reply drafts for me to review. Sending is always my job.</p>
     </header>
 
     <div class="part">
@@ -306,13 +316,51 @@ footer{display:grid;gap:.5rem;padding-top:1.5rem;border-top:1px solid var(--rule
     </div>
 
     <div class="part">
-      <p class="label">Rules I set</p>
+      <p class="label">Who decides what</p>
+      <div class="decide">
+        <div class="judgment">
+          <h4>Claude's judgment</h4>
+          <p class="sub">The parts that take reading and writing.</p>
+          <ul>
+            <li>What a new email means for an application or conversation</li>
+            <li>Whether a role fits me, explained in words instead of a score</li>
+            <li>Which people are worth contacting, and why</li>
+            <li>The wording of drafts and prep notes</li>
+          </ul>
+        </div>
+        <div class="rules">
+          <h4>Rules I set</h4>
+          <p class="sub">Fixed in its instructions instead of left to judgment.</p>
+          <ul>
+            <li><b>Drafts only.</b> Never send, reply, accept a meeting or submit an application. The one email it sends is a short summary, to me.</li>
+            <li><b>Evidence before status.</b> Proposed times are not an interview until a confirmation arrives. A role is closed only when the official page says so or the posting is missing on two checks in a row.</li>
+            <li><b>Sources and unknowns.</b> Every fact links to an email or the company's careers page. Missing information shows as unknown, never as "nothing due."</li>
+            <li><b>Email is data, not instructions.</b> Text inside a message can't tell it to do anything.</li>
+            <li><b>Limits per run.</b> About 25 searches, 4 new people and 6 drafts at noon, fewer at midnight. Free contact search only.</li>
+            <li><b>Follow-up timing.</b> One follow-up after 7 business days without a reply, a second after 2 to 3 more weeks, never a third.</li>
+          </ul>
+        </div>
+        <div class="mine">
+          <h4>Mine</h4>
+          <p class="sub">Decisions it reads first and obeys.</p>
+          <ul>
+            <li>Every send, application and meeting</li>
+            <li>Marking a role Pass, a person Do not contact or a company Priority</li>
+            <li>Edits: if I change a draft in Gmail, it marks it "edited by you" and never rewrites it</li>
+            <li>Corrections: mine override its fields, and when new evidence conflicts with a call I made, it flags it for me instead of changing it</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="part">
+      <p class="label">When something breaks</p>
       <ul>
-        <li><b>Drafts only.</b> It cannot send, reply, accept a meeting or submit an application. The one email it sends is a short summary, to me.</li>
-        <li><b>Every fact links to its source,</b> an email or the company's careers page. Missing information shows as unknown, never as "nothing due."</li>
-        <li><b>My decisions win.</b> If I mark a role Pass or a person Do not contact, it stops. It never overwrites a field I edited. When new evidence conflicts with my call, it flags it for me instead.</li>
-        <li><b>Email is data, not instructions.</b> Text inside a message can't tell it to do anything.</li>
-        <li><b>No paid lookups.</b> It uses free search only on the contact database.</li>
+        <li><b>Save as it goes.</b> Each stage writes its results as soon as it finishes, so a failure late in a run doesn't lose earlier work.</li>
+        <li><b>Report each stage.</b> The hub page shows whether email, roles, people, drafts and prep each finished, partly finished, failed or were skipped, and what may be out of date.</li>
+        <li><b>No overlapping runs.</b> A run lock stops two runs at once. A lock older than 50 minutes counts as abandoned, so one crashed run can't block the next.</li>
+        <li><b>No overwriting my edits.</b> Every write is pinned to the record's version. If I changed the record in the meantime, the database refuses the write and the run re-reads it first.</li>
+        <li><b>Fall back.</b> If it can't write to the hub at all, it still checks my email and says plainly that the hub wasn't updated.</li>
       </ul>
     </div>
 
@@ -326,7 +374,7 @@ footer{display:grid;gap:.5rem;padding-top:1.5rem;border-top:1px solid var(--rule
       <ol class="timeline">
         <li><time datetime="2026-09-08">Sept 8</time><p>Started with a weekday 7 AM inbox triage that drafts replies and emails me a one-minute summary. It still runs.</p></li>
         <li><time datetime="2026-10-06">Oct 6, midday</time><p>Added three separate scheduled tasks for open roles, networking targets and my Gmail pipeline, all writing to one shared hub. Two of the three failed on their first run when they hit usage limits.</p></li>
-        <li><time datetime="2026-10-06">Oct 6, 2 PM</time><p>Rebuilt them as one cycle. A run lock stops two runs from overlapping, and every write checks the record's version so it never overwrites a change I made on the page.</p></li>
+        <li><time datetime="2026-10-06">Oct 6, 2 PM</time><p>Rebuilt them as one cycle, which is when the run lock and the version check on every write went in.</p></li>
         <li><time datetime="2026-10-07">Since Oct 7</time><p>It has run at noon and midnight every day.</p></li>
       </ol>
     </div>
@@ -347,6 +395,7 @@ footer{display:grid;gap:.5rem;padding-top:1.5rem;border-top:1px solid var(--rule
     <div class="doesnt">
       <p class="label">What this doesn't show</p>
       <ul>
+        <li>Most of its rules are instructions, not permissions. The database enforces the version checks, but "drafts only" depends on the model following its instructions: the run still has send access, because it emails me the summary. A stricter setup would remove send access and notify me another way.</li>
         <li>It finds and tracks faster than I decide. In week one, its follow-up drafts sat unsent for days, so the bottleneck moved from finding information to my own review.</li>
         <li>When I rewrite a draft, the next run records that as a pattern instead of assuming its drafts were good. In week one I replaced its reply with my own wording and wrote my own thank-you notes.</li>
         <li>It can't read LinkedIn, so the contacts it finds are verified from public pages only.</li>

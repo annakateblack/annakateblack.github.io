@@ -2,7 +2,7 @@
 Everything below is public: the text of Anna Kate Black's portfolio site, then a few extra facts. Sections start with '## Section:'.
 
 ## Section: Introduction
-Finance, University of Georgia · Certificate in Artificial Intelligence for Business · May 2027
+Finance, University of Georgia · Certificate in Artificial Intelligence for Business · May 2027Now: Agentic AI Research Fellow at UGA, with Professor Gerald Kane
 Anna Kate Black
 I build AI workflows around problems I can see up close, then check whether they actually work. Claude writes most of my code. My part is choosing the problem, setting the rules the system has to follow, testing it in real use, and being clear about what the results do and don't show.
 annakateblack7@gmail.com LinkedIn GitHub
@@ -207,7 +207,7 @@ My class blog post walking through the build, February 2026
 In progress
 Research · UGA CURO · Since August 2026
 Heading: Agentic AI research
-I'm an Agentic AI Research Fellow through UGA's Center for Undergraduate Research Opportunities, one of three students Professor Gerald Kane, chair of the MIS department, invited to research agentic AI frameworks and how companies adopt them. Each week we follow the AI news, listen to The AI Daily Brief and discuss what it means for companies putting AI to work.
+I'm an Agentic AI Research Fellow through UGA's Center for Undergraduate Research Opportunities, one of three students Professor Gerald Kane, head of the MIS department, invited to research agentic AI frameworks and how companies adopt them. Each week we follow the AI news, listen to The AI Daily Brief and discuss what it means for companies putting AI to work.
 I prep with Claude as a research analyst and tag every point by where it came from: the episode, my own analysis or an outside source. That way a host's guess or a shaky statistic doesn't turn into a fact in our discussion.
 We're now starting a multi-model experiment. It hasn't produced results yet.
 
@@ -243,7 +243,9 @@ Corsair Society, Investment Banking Cohort Since 2024
 One of 35 students in UGA's finance society for students headed to Wall Street.
 Apollo Society 2024 to 2025
 Sector analyst for Consumer Discretionary in a student-run portfolio.
-Outside work: I climbed Kilimanjaro in 2021, I'm training for a marathon, I'm up at 5 AM most days, and I keep a food blog.
+Outside work: I climbed Kilimanjaro at 16 because my dad asked at dinner, I've gone skydiving twice and jumped first both times, I'm up at 5 AM training for a marathon, and I believe anyone can learn to like any food (pickles, wasabi and matcha are my proof).
+### In the news
+The Red & Black: UGA club field hockey wins its Challenge Cup debut, November 2025
 Built with Claude. Updated October 2026.
 annakateblack7@gmail.com · LinkedIn · GitHub
 
@@ -266,5 +268,7 @@ annakateblack7@gmail.com · LinkedIn · GitHub
 - Grit: her dad was an Army captain who also served as a paratrooper. (Lead with "Army captain"; it was his rank.) Growing up as the only daughter, with two brothers, in a military household shaped her to be gritty and to keep working hard.
 - High school: St. John's School in Houston. Her teammates voted her captain of both the field hockey and lacrosse teams, and her field hockey team was ranked #5 in the US while she played.
 - Captaincy: every captain role she has held was chosen by a team vote, including UGA Club Field Hockey.
+- Challenge Cup, November 2025: as junior co-captain, she scored the second goal in UGA club field hockey's 2-0 win in the Challenge Cup final, playing through a broken finger. The Red & Black covered the team's win in its Challenge Cup debut and quoted her on competing at the highest level from the first day.
+- Test scores: ACT 35.
 - Favorite class: BUSN 4400 at UGA with Professor Kane, a three-hour AI discussion class. It drew people who wanted to build, push back, and debate AI news and ethics, and everyone pushed each other. It was not a typical classroom, which is why she loved it.
 - Food hot take: she believes anyone can learn to like any food if they keep trying it and work to appreciate it. Pickles, wasabi and matcha all started as foods she didn't like but wanted to, and now she loves all three.

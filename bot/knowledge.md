@@ -250,10 +250,20 @@ annakateblack7@gmail.com · LinkedIn · GitHub
 ## Section: More about Anna Kate (not shown on the page)
 - Full name Anna Katherine Black; she goes by Anna Kate.
 - What she's looking for: full-time roles starting after she graduates in May 2027 where AI is a meaningful part of the work, such as AI enablement and adoption, AI solutions and deployment, AI implementation consulting, and applied-AI product roles.
-- Location: she's happy to talk about location directly.
+- Location: she loves New York, and above all she wants to be in whatever city gives her the best opportunity to grow professionally.
 - How to reach her: email annakateblack7@gmail.com, LinkedIn linkedin.com/in/annakateblack, GitHub github.com/annakateblack.
 - Other programs: London School of Economics Summer Program (July to August 2024), studying consumer behavior with a cohort of 20 international students. Magellan Program at UGA (fall 2023), a first-year business program selected from more than 500 applicants.
 - Apollo Society (September 2024 to May 2025): one of 54 students selected from more than 240 applicants; researched, presented and defended stock recommendations in the Consumer Discretionary sector.
 - Corsair Society Investment Banking Cohort: training in valuation, financial modeling, LBOs and M&A.
 - MathCounts: tutored middle school students weekly, adjusting how she explained concepts to keep students engaged.
 - Interests: climbed Mount Kilimanjaro in 2021, food blogging, training for a marathon, the 5 AM club, fashion rental services and adventure sports.
+
+## Section: Anna Kate in her own words (personality and stories)
+- How she describes herself: happy and upbeat, a team player, curious, very social and genuinely funny. She is a member of Kappa Kappa Gamma.
+- Growth area, in her words: she doesn't know much Python yet, but she is learning to understand it and practices asking why the code Claude writes works the way it does.
+- Kilimanjaro: she climbed it at 16. Her dad jokingly asked at the dinner table whether she'd do it with him. She had no mountain experience and usually preferred casual hikes, but she thought about it that night and told him the next morning she was in, because nobody should turn down a mental and physical challenge, especially one that cool.
+- Skydiving: she has gone skydiving twice. Both times her friends were nervous, so she volunteered to jump first.
+- Grit: her dad was a paratrooper and a captain in the Army. Growing up as the only daughter, with two brothers, in a military household shaped her to be gritty and to keep working hard.
+- High school: St. John's School in Houston. She captained both the field hockey and lacrosse teams, and her field hockey team was ranked #5 in the US while she played.
+- Favorite class: BUSN 4400 at UGA with Professor Kane, a three-hour AI discussion class. It drew people who wanted to build, push back, and debate AI news and ethics, and everyone pushed each other. It was not a typical classroom, which is why she loved it.
+- Food hot take: she believes anyone can learn to like any food if they keep trying it and work to appreciate it. Pickles, wasabi and matcha all started as foods she didn't like but wanted to, and now she loves all three.

@@ -53,7 +53,7 @@ export default {
       return reply({ error: "offline" }, 503);
     }
 
-    const api = await fetch("https://api.anthropic.com/v1/messages", {
+    const call = () => fetch("https://api.anthropic.com/v1/messages", {
       method: "POST",
       headers: {
         "x-api-key": env.ANTHROPIC_API_KEY,
@@ -62,7 +62,7 @@ export default {
       },
       body: JSON.stringify({
         model: env.MODEL || MODEL,
-        max_tokens: 400,
+        max_tokens: 1024,
         system: [
           { type: "text", text: rules },
           { type: "text", text: knowledge, cache_control: { type: "ephemeral" } },
@@ -70,11 +70,20 @@ export default {
         messages,
       }),
     });
+    let api = await call();
+    if (!api.ok && api.status >= 500) {   // one retry when the API is briefly overloaded
+      await new Promise((r) => setTimeout(r, 1200));
+      api = await call();
+    }
     if (!api.ok) return reply({ error: api.status === 429 ? "busy" : "offline" }, 503);
 
     const data = await api.json();
     let text = (data.content || []).filter((b) => b.type === "text").map((b) => b.text).join("").trim();
     text = text.replace(/\s*—\s*/g, ", ").replace(/\*\*/g, "");
+    if (data.stop_reason === "max_tokens") {   // never show a sentence cut off mid-way
+      const end = Math.max(text.lastIndexOf(". "), text.lastIndexOf(".\n"), text.endsWith(".") ? text.length - 1 : -1);
+      text = end > 0 ? text.slice(0, end + 1) : text;
+    }
     if (!text) return reply({ error: "offline" }, 503);
     return reply({ reply: text });
   },

@@ -235,7 +235,7 @@ Summer Investment Analyst, Charleston. Market research, valuations and LBO model
 Citi Investment Banking Early ID Program Jan 2025
 Participant, New York.
 MathCounts Dec 2024 to May 2026
-Volunteer math tutor for middle school students, weekly.
+Volunteered weekly as a math tutor for middle school students.
 ### Leadership
 UGA Club Field Hockey Since 2023
 President for 2026 to 2027, previously captain and practice coordinator. Ran a $10K travel budget and season logistics; the team placed 7th at the 2024 National Club Tournament.
@@ -255,7 +255,7 @@ annakateblack7@gmail.com · LinkedIn · GitHub
 - Other programs: London School of Economics Summer Program (July to August 2024), studying consumer behavior with a cohort of 20 international students. Magellan Program at UGA (fall 2023), a first-year business program selected from more than 500 applicants.
 - Apollo Society (September 2024 to May 2025): one of 54 students selected from more than 240 applicants; researched, presented and defended stock recommendations in the Consumer Discretionary sector.
 - Corsair Society Investment Banking Cohort: training in valuation, financial modeling, LBOs and M&A.
-- MathCounts: tutored middle school students weekly, adjusting how she explained concepts to keep students engaged.
+- MathCounts: tutored middle school students weekly from December 2024 to May 2026, adjusting how she explained concepts to keep students engaged.
 - Interests: climbed Mount Kilimanjaro in 2021, food blogging, training for a marathon, the 5 AM club, fashion rental services and adventure sports.
 
 ## Section: Anna Kate in her own words (personality and stories)

@@ -140,6 +140,50 @@ blockquote cite{font-style:normal;font-size:.9rem;color:var(--ink-3)}
 .links a:hover{border-color:var(--plum)}
 .links a::after{content:"\2197";font-size:.85em}
 
+/* prototype stills: two columns at every width so each step stays readable */
+.shots{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem .75rem}
+.shots figcaption{font-size:.85rem;line-height:1.4}
+.shots figcaption b{font:500 .8rem/1 var(--mono);color:var(--plum);margin-right:.3rem}
+.shots .small{grid-column:1 / -1}
+
+/* background */
+.background{display:grid;gap:1.5rem;padding-top:2rem;border-top:2px solid var(--ink)}
+.bg-group{display:grid;gap:.75rem}
+.bg-group h3{font-size:1.15rem}
+.bg-group dl{margin:0;display:grid;gap:.9rem}
+.bg-group dt{font-weight:600;display:flex;flex-wrap:wrap;justify-content:space-between;gap:.1rem 1rem}
+.bg-group dt span{font:500 .8rem/1.9 var(--mono);color:var(--ink-3);font-weight:500}
+.bg-group dd{margin:.15rem 0 0;color:var(--ink-2);font-size:.97rem}
+
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* ask box */
+.ask{display:grid;gap:.9rem;padding:1.15rem 1.25rem;background:var(--surface);border:1px solid var(--plum-line);border-radius:12px}
+.ask-head{display:grid;gap:.3rem}
+.ask-head h2{font-size:1.45rem}
+.ask-head p{color:var(--ink-2);font-size:.95rem}
+.ask-log{display:grid;gap:.7rem;max-height:26rem;overflow-y:auto;overscroll-behavior:contain}
+.ask-log:empty{display:none}
+.msg{max-width:92%;padding:.6rem .85rem;border-radius:12px;font-size:.97rem;line-height:1.55;white-space:pre-wrap;overflow-wrap:anywhere}
+.msg.q{justify-self:end;background:var(--plum);color:var(--paper);border-bottom-right-radius:4px}
+.msg.a{justify-self:start;background:var(--paper);border:1px solid var(--rule);border-bottom-left-radius:4px}
+.msg.a.wait{color:var(--ink-3)}
+.ask-chips{display:flex;flex-wrap:wrap;gap:.5rem}
+.ask-chips button{font:500 .88rem/1.3 var(--body);color:var(--plum);background:var(--plum-soft);border:1px solid var(--plum-line);border-radius:999px;padding:.4rem .75rem;cursor:pointer}
+.ask-chips button:hover{border-color:var(--plum)}
+.ask form{display:flex;gap:.5rem}
+.ask input{flex:1;min-width:0;font:400 1rem/1.4 var(--body);color:var(--ink);background:var(--paper);border:1px solid var(--rule);border-radius:8px;padding:.6rem .75rem}
+.ask input:focus{outline:2px solid var(--plum);outline-offset:1px}
+.ask form button{font:600 .95rem/1 var(--body);color:var(--paper);background:var(--plum);border:0;border-radius:8px;padding:0 1rem;cursor:pointer}
+.ask form button:disabled{opacity:.5;cursor:default}
+.ask .fine{font-size:.8rem;color:var(--ink-3)}
+
+/* research and tools */
+.research{display:grid;gap:1rem;padding-top:2rem;border-top:2px solid var(--ink)}
+.research p{color:var(--ink)}
+.research .meta{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1rem}
+.tools{font-size:.95rem;color:var(--ink-2);padding-top:1rem;border-top:1px solid var(--rule)}
+
 /* who decides what: model judgment vs fixed rules vs my decisions */
 .decide{display:grid;gap:.75rem}
 .decide > div{--c:var(--plum);display:grid;gap:.5rem;align-content:start;padding:1rem 1.15rem;background:var(--surface);border:1px solid var(--rule);border-left:4px solid var(--c);border-radius:10px;min-width:0}
@@ -194,6 +238,25 @@ footer{display:grid;gap:.5rem;padding-top:1.5rem;border-top:1px solid var(--rule
     </a>
   </nav>
 
+  <section class="ask" id="ask" aria-labelledby="h-ask" hidden data-endpoint="https://ask-annakate.annakateblack7.workers.dev">
+    <div class="ask-head">
+      <h2 id="h-ask">Ask about my work</h2>
+      <p>My site assistant answers from this page and my background. It's AI and can be wrong, so for anything important, email me.</p>
+    </div>
+    <div class="ask-log" id="ask-log" aria-live="polite"></div>
+    <div class="ask-chips" id="ask-chips">
+      <button type="button">What did she build for Locker?</button>
+      <button type="button">What is she looking for after graduation?</button>
+      <button type="button">What does she do outside of work?</button>
+    </div>
+    <form id="ask-form">
+      <label for="ask-input" class="sr-only">Your question</label>
+      <input id="ask-input" maxlength="500" placeholder="Ask a question" autocomplete="off">
+      <button type="submit">Ask</button>
+    </form>
+    <p class="fine">Built with Claude. Your question goes to Claude to be answered; this site doesn't keep it.</p>
+  </section>
+
   <section class="principles" aria-labelledby="h-how">
     <p class="label" id="h-how">How I build with AI</p>
     <ul>
@@ -201,6 +264,7 @@ footer{display:grid;gap:.5rem;padding-top:1.5rem;border-top:1px solid var(--rule
       <li><b>A person approves anything that leaves the system.</b><p>Recruiting HQ writes drafts in my Gmail, and I send everything myself. Its rules forbid sending, accepting a meeting or submitting an application.</p></li>
       <li><b>Say what the result doesn't show.</b><p>Every project below ends with its limits. In Occasion Retrieval, the headline score was zero, and I reported it.</p></li>
     </ul>
+    <p class="tools">What I use most right now: Claude for building and research, Wispr Flow to talk instead of type, and Instinct for texts.</p>
   </section>
 
   <!-- ===================== LOCKER LENS ===================== -->
@@ -214,7 +278,7 @@ footer{display:grid;gap:.5rem;padding-top:1.5rem;border-top:1px solid var(--rule
     <section class="source" aria-labelledby="h-lens-proto">
       <div class="source-h">
         <h3 id="h-lens-proto">The prototype I built</h3>
-        <p class="source-note">April 2026. Described from my extension code, my demo recording and my emails with Locker. The code and recording are not published here.</p>
+        <p class="source-note">April 2026. Described from my extension code, my demo recording and my emails with Locker. The code and full recording are not published here.</p>
       </div>
 
       <div class="part">
@@ -231,6 +295,14 @@ footer{display:grid;gap:.5rem;padding-top:1.5rem;border-top:1px solid var(--rule
           <li><span>Product matches from real retailers came back in a gallery, and the user picked the ones they wanted.</span></li>
           <li><span>The picks appeared in the Wants grid as product cards matching Locker's layout, marked with a small Locker Lens badge and linking to the retailer's page. A search took about three seconds.</span></li>
         </ol>
+      </div>
+
+      <div class="shots" role="group" aria-labelledby="h-lens-shots">
+        <figure><img src="assets/lens-1-button.webp" width="720" height="740" alt="My Locker profile page with a Lens button next to the Edit and Share buttons."><figcaption><b>1</b> The Lens button, styled to match Edit and Share</figcaption></figure>
+        <figure><img src="assets/lens-2-search.webp" width="720" height="740" alt="A Locker Lens window showing an in-store photo of a denim skirt while it uploads and searches."><figcaption><b>2</b> An in-store photo uploading and searching</figcaption></figure>
+        <figure><img src="assets/lens-3-matches.webp" width="720" height="740" alt="A Select Matches window with six product results from retailers including Sandro, Harrods and Nordstrom, one of them selected."><figcaption><b>3</b> Picking matches from real retailers</figcaption></figure>
+        <figure><img src="assets/lens-4-saved.webp" width="720" height="740" alt="The Wants grid with the chosen skirt saved as a card marked Locker Lens, and a note saying Locker Lens found one match."><figcaption><b>4</b> The pick saved to Wants with a Locker Lens badge</figcaption></figure>
+        <p class="small" id="h-lens-shots">Stills from my April 14 demo recording of the prototype, on my own account on Locker's live site. The same screens are in my April class blog post.</p>
       </div>
 
       <div class="part">
@@ -530,6 +602,14 @@ footer{display:grid;gap:.5rem;padding-top:1.5rem;border-top:1px solid var(--rule
     </div>
   </article>
 
+  <section class="research" id="research" aria-labelledby="h-research">
+    <div class="meta"><span class="chip experiment">In progress</span> <span class="label">Research · UGA CURO · Since August 2026</span></div>
+    <h2 id="h-research">Agentic AI research</h2>
+    <p>I'm an Agentic AI Research Fellow through UGA's Center for Undergraduate Research Opportunities, one of three students Professor Gerald Kane, chair of the MIS department, invited to research agentic AI frameworks and how companies adopt them. Each week we follow the AI news, listen to The AI Daily Brief and discuss what it means for companies putting AI to work.</p>
+    <p>I prep with Claude as a research analyst and tag every point by where it came from: the episode, my own analysis or an outside source. That way a host's guess or a shaky statistic doesn't turn into a fact in our discussion.</p>
+    <p>We're now starting a multi-model experiment. It hasn't produced results yet.</p>
+  </section>
+
   <section class="also-built" aria-labelledby="h-earlier">
     <p class="label" id="h-earlier">Earlier build</p>
     <h3>Resume tool</h3>
@@ -538,10 +618,101 @@ footer{display:grid;gap:.5rem;padding-top:1.5rem;border-top:1px solid var(--rule
     <p><a href="https://busn4400.wordpress.com/2026/01/31/how-i-used-ai-to-stop-spending-2-hours-on-my-friends-resumes-because-i-cant-say-no/">My class blog post on the resume tool</a></p>
   </section>
 
+  <section class="background" id="background" aria-labelledby="h-bg">
+    <p class="label" id="h-bg">Background</p>
+    <div class="bg-group">
+      <h3>Education</h3>
+      <dl>
+        <div><dt>University of Georgia, Morehead Honors College <span>May 2027</span></dt><dd>BBA in Finance with the Certificate in Artificial Intelligence for Business. GPA 3.75. Honors Program and Classic Scholarship. Coursework includes Financial Modeling, Investment Management, Foundations of AI in Business and Computer Programming in Business.</dd></div>
+        <div><dt>Adventis Level II Financial Modeling Certification <span>Dec 2024</span></dt><dd>Built a three-statement model from scratch in under 90 minutes.</dd></div>
+      </dl>
+    </div>
+    <div class="bg-group">
+      <h3>Experience</h3>
+      <dl>
+        <div><dt>Berkeley Research Group, Turnaround &amp; Restructuring <span>Summer 2026</span></dt><dd>Summer Associate, New York. Built 13-week cash forecasts and weekly variance bridges for a restructuring engagement, analyzed store P&amp;Ls and labor metrics, and helped pitch a distressed engagement thesis to senior leadership.</dd></div>
+        <div><dt>Locker <span>Apr to May 2026</span></dt><dd>Product AI Implementation Intern, remote. Joined after demoing the Locker Lens prototype above; worked with engineering on requirements for AI features and presented user data and product changes to the CEO and COO each week.</dd></div>
+        <div><dt>South Street Partners, Private Equity Real Estate <span>Summer 2025</span></dt><dd>Summer Investment Analyst, Charleston. Market research, valuations and LBO modeling; condensed 200-page decks into 10-page analyses for VPs.</dd></div>
+        <div><dt>Citi Investment Banking Early ID Program <span>Jan 2025</span></dt><dd>Participant, New York.</dd></div>
+        <div><dt>MathCounts <span>Dec 2024 to May 2026</span></dt><dd>Volunteered weekly as a math tutor for middle school students.</dd></div>
+      </dl>
+    </div>
+    <div class="bg-group">
+      <h3>Leadership</h3>
+      <dl>
+        <div><dt>UGA Club Field Hockey <span>Since 2023</span></dt><dd>President for 2026 to 2027, previously captain and practice coordinator. Ran a $10K travel budget and season logistics; the team placed 7th at the 2024 National Club Tournament.</dd></div>
+        <div><dt>Corsair Society, Investment Banking Cohort <span>Since 2024</span></dt><dd>One of 35 students in UGA's finance society for students headed to Wall Street.</dd></div>
+        <div><dt>Apollo Society <span>2024 to 2025</span></dt><dd>Sector analyst for Consumer Discretionary in a student-run portfolio.</dd></div>
+      </dl>
+    </div>
+    <p class="small">Outside work: I climbed Kilimanjaro in 2021, I'm training for a marathon, I'm up at 5 AM most days, and I keep a food blog.</p>
+  </section>
+
   <footer>
     <p>Built with Claude. Updated October 2026.</p>
     <p>annakateblack7@gmail.com · <a href="https://www.linkedin.com/in/annakateblack/">LinkedIn</a> · <a href="https://github.com/annakateblack">GitHub</a></p>
   </footer>
 </main>
+<script>
+(() => {
+  const box = document.getElementById("ask");
+  const url = box && box.dataset.endpoint;
+  if (!url) return;
+  box.hidden = false;
+  const log = document.getElementById("ask-log");
+  const form = document.getElementById("ask-form");
+  const input = document.getElementById("ask-input");
+  const chips = document.getElementById("ask-chips");
+  const btn = form.querySelector("button");
+  const history = [];
+  const add = (cls, text) => {
+    const d = document.createElement("div");
+    d.className = "msg " + cls;
+    d.textContent = text;
+    log.appendChild(d);
+    log.scrollTop = log.scrollHeight;
+    return d;
+  };
+  async function ask(q) {
+    q = (q || "").trim().slice(0, 500);
+    if (!q || btn.disabled) return;
+    chips.hidden = true;
+    add("q", q);
+    input.value = "";
+    btn.disabled = true;
+    const wait = add("a wait", "Thinking…");
+    history.push({ role: "user", content: q });
+    const send = async () => {
+      const r = await fetch(url, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ messages: history.slice(-9) }) });
+      const data = await r.json().catch(() => ({}));
+      if (!r.ok || !data.reply) throw new Error(data.error || "error");
+      return data;
+    };
+    try {
+      let data;
+      try { data = await send(); }
+      catch (err) {
+        if (err.message === "busy") throw err;
+        await new Promise((res) => setTimeout(res, 1500));
+        data = await send();
+      }
+      wait.classList.remove("wait");
+      wait.textContent = data.reply;
+      history.push({ role: "assistant", content: data.reply });
+    } catch (e) {
+      history.pop();
+      wait.classList.remove("wait");
+      wait.textContent = e.message === "busy"
+        ? "Lots of questions right now. Please try again in a few minutes, or email Anna Kate at annakateblack7@gmail.com."
+        : "The assistant can't answer right now. You can reach Anna Kate at annakateblack7@gmail.com.";
+    } finally {
+      btn.disabled = false;
+      if (matchMedia("(hover: hover)").matches) input.focus();
+    }
+  }
+  form.addEventListener("submit", (e) => { e.preventDefault(); ask(input.value); });
+  chips.addEventListener("click", (e) => { if (e.target.matches("button")) ask(e.target.textContent); });
+})();
+</script>
 </body>
 </html>

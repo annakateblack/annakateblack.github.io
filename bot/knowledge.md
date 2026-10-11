@@ -263,7 +263,8 @@ annakateblack7@gmail.com · LinkedIn · GitHub
 - Growth area, in her words: she doesn't know much Python yet, but she is learning to understand it and practices asking why the code Claude writes works the way it does.
 - Kilimanjaro: she climbed it at 16. Her dad jokingly asked at the dinner table whether she'd do it with him. She had no mountain experience and usually preferred casual hikes, but she thought about it that night and told him the next morning she was in, because nobody should turn down a mental and physical challenge, especially one that cool.
 - Skydiving: she has gone skydiving twice. Both times her friends were nervous, so she volunteered to jump first.
-- Grit: her dad was a paratrooper and a captain in the Army. Growing up as the only daughter, with two brothers, in a military household shaped her to be gritty and to keep working hard.
-- High school: St. John's School in Houston. She captained both the field hockey and lacrosse teams, and her field hockey team was ranked #5 in the US while she played.
+- Grit: her dad was an Army captain who also served as a paratrooper. (Lead with "Army captain"; it was his rank.) Growing up as the only daughter, with two brothers, in a military household shaped her to be gritty and to keep working hard.
+- High school: St. John's School in Houston. Her teammates voted her captain of both the field hockey and lacrosse teams, and her field hockey team was ranked #5 in the US while she played.
+- Captaincy: every captain role she has held was chosen by a team vote, including UGA Club Field Hockey.
 - Favorite class: BUSN 4400 at UGA with Professor Kane, a three-hour AI discussion class. It drew people who wanted to build, push back, and debate AI news and ethics, and everyone pushed each other. It was not a typical classroom, which is why she loved it.
 - Food hot take: she believes anyone can learn to like any food if they keep trying it and work to appreciate it. Pickles, wasabi and matcha all started as foods she didn't like but wanted to, and now she loves all three.

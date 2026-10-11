@@ -159,7 +159,9 @@ blockquote cite{font-style:normal;font-size:.9rem;color:var(--ink-3)}
 
 /* ask box */
 .ask{display:grid;gap:.9rem;padding:1.15rem 1.25rem;background:var(--surface);border:1px solid var(--plum-line);border-radius:12px}
-.ask-head{display:grid;gap:.3rem}
+.ask-head{display:grid;grid-template-columns:auto minmax(0,1fr);gap:.9rem;align-items:center}
+.ask-head > div{display:grid;gap:.3rem}
+.ask-head .avatar{width:68px;height:68px;border-radius:50%;object-fit:cover;border:2px solid var(--plum-line);background:var(--plum-soft)}
 .ask-head h2{font-size:1.45rem}
 .ask-head p{color:var(--ink-2);font-size:.95rem}
 .ask-log{display:grid;gap:.7rem;max-height:26rem;overflow-y:auto;overscroll-behavior:contain}
@@ -240,8 +242,11 @@ footer{display:grid;gap:.5rem;padding-top:1.5rem;border-top:1px solid var(--rule
 
   <section class="ask" id="ask" aria-labelledby="h-ask" hidden data-endpoint="https://ask-annakate.annakateblack7.workers.dev">
     <div class="ask-head">
-      <h2 id="h-ask">Ask about my work</h2>
-      <p>My site assistant answers from this page and my background. It's AI and can be wrong, so for anything important, email me.</p>
+      <img class="avatar" src="assets/headshot.webp" width="240" height="240" alt="Anna Kate Black">
+      <div>
+        <h2 id="h-ask">Ask about my work</h2>
+        <p>My site assistant answers from this page and my background. It's AI and can be wrong, so for anything important, email me.</p>
+      </div>
     </div>
     <div class="ask-log" id="ask-log" aria-live="polite"></div>
     <div class="ask-chips" id="ask-chips">

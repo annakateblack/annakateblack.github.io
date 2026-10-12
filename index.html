@@ -231,7 +231,7 @@ footer{display:grid;gap:.5rem;padding-top:1.5rem;border-top:1px solid var(--rule
     <p class="label" id="h-glance">In 30 seconds</p>
     <dl>
       <div><dt>I find problems worth solving.</dt><dd>I asked friends who use Locker every day what was missing, then built a working prototype that informed the feature Locker launched. <a href="#locker-lens">Locker Lens</a></dd></div>
-      <div><dt>I build AI systems I actually use.</dt><dd>Recruiting HQ has run my job search twice a day since October 6, tracking 52 companies and 49 applications and conversations. <a href="#recruiting-hq">Recruiting HQ</a></dd></div>
+      <div><dt>I build AI systems I actually use.</dt><dd>Recruiting HQ runs my job search twice a day and tracks 52 companies and 49 applications and conversations. <a href="#recruiting-hq">Recruiting HQ</a></dd></div>
       <div><dt>I keep a person in charge.</dt><dd>My agents draft and I decide. Every fact links to its source, and I spell out which rules are instructions and which are permissions. <a href="#recruiting-hq">Who decides what</a></dd></div>
       <div><dt>I test before I claim.</dt><dd>In a controlled experiment backed by 305 automated tests, I reported a headline score of zero and the narrower result the data did support. <a href="#occasion-retrieval">Occasion Retrieval</a></dd></div>
       <div><dt>I teach others to build.</dt><dd>I walked 20 friends through building their own AI study dashboards and gave them the prompts to use on their own classes and exams. <a href="#teaching">Teaching</a></dd></div>
@@ -389,14 +389,14 @@ footer{display:grid;gap:.5rem;padding-top:1.5rem;border-top:1px solid var(--rule
   <!-- ===================== RECRUITING HQ ===================== -->
   <article class="project" id="recruiting-hq" aria-labelledby="h-hq">
     <header class="p-head">
-      <div class="meta"><span class="chip running">Runs daily</span><span class="label">Personal · Since October 6, 2026</span></div>
+      <div class="meta"><span class="chip running">Runs daily</span><span class="label">Personal project</span></div>
       <h2 id="h-hq">Recruiting HQ</h2>
       <p class="lede">An AI agent that runs the back office of my job search twice a day. It reads my recruiting email, rechecks which roles are still open, finds people worth contacting and writes reply drafts for me to review. Sending is always my job.</p>
     </header>
 
     <div class="part">
       <p class="label">The problem</p>
-      <p>By early October I had applied to about 30 roles and had 17 networking conversations going. Deadlines, replies and follow-ups were spread across Gmail threads, applicant portals and my own notes, and nothing tied them together.</p>
+      <p>I had applied to about 30 roles and had 17 networking conversations going. Deadlines, replies and follow-ups were spread across Gmail threads, applicant portals and my own notes, and nothing tied them together.</p>
     </div>
 
     <figure>
@@ -472,21 +472,21 @@ footer{display:grid;gap:.5rem;padding-top:1.5rem;border-top:1px solid var(--rule
 
     <div class="part">
       <p class="label">How it got here</p>
-      <ol class="timeline">
-        <li><time datetime="2026-09-08">Sept 8</time><p>Started with a weekday 7 AM inbox triage that drafts replies and emails me a one-minute summary. It still runs.</p></li>
-        <li><time datetime="2026-10-06">Oct 6, midday</time><p>Added three separate scheduled tasks for open roles, networking targets and my Gmail pipeline, all writing to one shared hub. Two of the three failed on their first run when they hit usage limits.</p></li>
-        <li><time datetime="2026-10-06">Oct 6, 2 PM</time><p>Rebuilt them as one cycle, which is when the run lock and the version check on every write went in.</p></li>
-        <li><time datetime="2026-10-07">Since Oct 7</time><p>It has run at noon and midnight every day.</p></li>
+      <ol class="steps">
+        <li><span>Started with a weekday 7 AM inbox triage that drafts replies and emails me a one-minute summary. It still runs.</span></li>
+        <li><span>Added three separate scheduled tasks for open roles, networking targets and my Gmail pipeline, all writing to one shared hub. Two of the three failed on their first run when they hit usage limits.</span></li>
+        <li><span>Rebuilt them as one cycle, which is when the run lock and the version check on every write went in.</span></li>
+        <li><span>Now it runs at noon and midnight every day.</span></li>
       </ol>
     </div>
 
-    <dl class="stats" aria-label="Scale as of October 10, 2026">
+    <dl class="stats" aria-label="Scale so far">
       <div><dt>52</dt><dd>companies tracked</dd></div>
       <div><dt>37</dt><dd>roles checked against official postings</dd></div>
       <div><dt>49</dt><dd>applications and conversations followed</dd></div>
       <div><dt>18</dt><dd>drafts written for my review</dd></div>
     </dl>
-    <p class="small">As of October 10, 2026. In its first week it caught a reply from a contact offering to refer me and had a draft response in my Gmail by the next update.</p>
+    <p class="small">Early on, it caught a reply from a contact offering to refer me and had a draft response in my Gmail by the next update.</p>
 
     <div class="part">
       <p class="label">My role and how I used AI</p>
@@ -497,8 +497,8 @@ footer{display:grid;gap:.5rem;padding-top:1.5rem;border-top:1px solid var(--rule
       <p class="label">What this doesn't show</p>
       <ul>
         <li>Most of its rules are instructions, not permissions. The database enforces the version checks, but "drafts only" depends on the model following its instructions: the run still has send access, because it emails me the summary. A stricter setup would remove send access and notify me another way.</li>
-        <li>It finds and tracks faster than I decide. In week one, its follow-up drafts sat unsent for days, so the bottleneck moved from finding information to my own review.</li>
-        <li>When I rewrite a draft, the next run records that as a pattern instead of assuming its drafts were good. In week one I replaced its reply with my own wording and wrote my own thank-you notes.</li>
+        <li>It finds and tracks faster than I decide. Early on, its follow-up drafts sat unsent for days, so the bottleneck moved from finding information to my own review.</li>
+        <li>When I rewrite a draft, the next run records that as a pattern instead of assuming its drafts were good. Early on I replaced its reply with my own wording and wrote my own thank-you notes.</li>
         <li>It can't read LinkedIn, so the contacts it finds are verified from public pages only.</li>
         <li>Next, I want it to find more relevant people and get better at ranking who is actually worth contacting.</li>
       </ul>

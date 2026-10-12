@@ -12,7 +12,7 @@ In 30 seconds
 I find problems worth solving.
 I asked friends who use Locker every day what was missing, then built a working prototype that informed the feature Locker launched. Locker Lens
 I build AI systems I actually use.
-Recruiting HQ has run my job search twice a day since October 6, tracking 52 companies and 49 applications and conversations. Recruiting HQ
+Recruiting HQ runs my job search twice a day and tracks 52 companies and 49 applications and conversations. Recruiting HQ
 I keep a person in charge.
 My agents draft and I decide. Every fact links to its source, and I spell out which rules are instructions and which are permissions. Who decides what
 I test before I claim.
@@ -84,11 +84,11 @@ What this doesn't show
 
 ## Section: Recruiting HQ
 Runs daily
-Personal · Since October 6, 2026
+Personal project
 Heading: Recruiting HQ
 An AI agent that runs the back office of my job search twice a day. It reads my recruiting email, rechecks which roles are still open, finds people worth contacting and writes reply drafts for me to review. Sending is always my job.
 The problem
-By early October I had applied to about 30 roles and had 17 networking conversations going. Deadlines, replies and follow-ups were spread across Gmail threads, applicant portals and my own notes, and nothing tied them together.
+I had applied to about 30 roles and had 17 networking conversations going. Deadlines, replies and follow-ups were spread across Gmail threads, applicant portals and my own notes, and nothing tied them together.
 [Image: The Recruiting HQ Today page showing three ranked tasks, an agenda for the next two weeks and new updates since the last visit.]
 The hub page, shown here with made-up companies and people. The real one holds my actual pipeline, so it stays private.
 What each run does, at noon and midnight
@@ -128,18 +128,10 @@ When something breaks
 [Image: A reply draft open for review. A highlighted bracket asks for available times, and a note says nothing sends without sign-off.]
 A reply draft waiting for review, with demo data. The highlighted bracket is the one fact it needs from me.
 How it got here
--
-Sept 8
-Started with a weekday 7 AM inbox triage that drafts replies and emails me a one-minute summary. It still runs.
--
-Oct 6, midday
-Added three separate scheduled tasks for open roles, networking targets and my Gmail pipeline, all writing to one shared hub. Two of the three failed on their first run when they hit usage limits.
--
-Oct 6, 2 PM
-Rebuilt them as one cycle, which is when the run lock and the version check on every write went in.
--
-Since Oct 7
-It has run at noon and midnight every day.
+- Started with a weekday 7 AM inbox triage that drafts replies and emails me a one-minute summary. It still runs.
+- Added three separate scheduled tasks for open roles, networking targets and my Gmail pipeline, all writing to one shared hub. Two of the three failed on their first run when they hit usage limits.
+- Rebuilt them as one cycle, which is when the run lock and the version check on every write went in.
+- Now it runs at noon and midnight every day.
 52
 companies tracked
 37
@@ -148,13 +140,13 @@ roles checked against official postings
 applications and conversations followed
 18
 drafts written for my review
-As of October 10, 2026. In its first week it caught a reply from a contact offering to refer me and had a draft response in my Gmail by the next update.
+Early on, it caught a reply from a contact offering to refer me and had a draft response in my Gmail by the next update.
 My role and how I used AI
 I built it in conversation with Claude. I described the workflow and the rules; Claude wrote the run instructions and built the hub page, which runs as Claude scheduled tasks with my Gmail and a contact database connected. When a run failed or did something I didn't want, I changed the rules. I use it every day.
 What this doesn't show
 - Most of its rules are instructions, not permissions. The database enforces the version checks, but "drafts only" depends on the model following its instructions: the run still has send access, because it emails me the summary. A stricter setup would remove send access and notify me another way.
-- It finds and tracks faster than I decide. In week one, its follow-up drafts sat unsent for days, so the bottleneck moved from finding information to my own review.
-- When I rewrite a draft, the next run records that as a pattern instead of assuming its drafts were good. In week one I replaced its reply with my own wording and wrote my own thank-you notes.
+- It finds and tracks faster than I decide. Early on, its follow-up drafts sat unsent for days, so the bottleneck moved from finding information to my own review.
+- When I rewrite a draft, the next run records that as a pattern instead of assuming its drafts were good. Early on I replaced its reply with my own wording and wrote my own thank-you notes.
 - It can't read LinkedIn, so the contacts it finds are verified from public pages only.
 - Next, I want it to find more relevant people and get better at ranking who is actually worth contacting.
 

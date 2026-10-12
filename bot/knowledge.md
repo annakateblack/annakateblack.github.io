@@ -17,6 +17,8 @@ I keep a person in charge.
 My agents draft and I decide. Every fact links to its source, and I spell out which rules are instructions and which are permissions. Who decides what
 I test before I claim.
 In a controlled experiment backed by 305 automated tests, I reported a headline score of zero and the narrower result the data did support. Occasion Retrieval
+I teach others to build.
+I walked 20 friends through building their own AI study dashboards and gave them the prompts to use on their own classes and exams. Teaching
 I pair finance with AI research.
 Turnaround and restructuring at BRG, private equity real estate at South Street Partners, and agentic AI research with Professor Gerald Kane, who wrote about the Locker story. Background
 
@@ -224,6 +226,12 @@ I'm an Agentic AI Research Fellow through UGA's Center for Undergraduate Researc
 I prep with Claude as a research analyst and tag every point by where it came from: the episode, my own analysis or an outside source. That way a host's guess or a shaky statistic doesn't turn into a fact in our discussion.
 We're now starting a multi-model experiment. It hasn't produced results yet.
 
+## Section: Study dashboards with 20 friends
+Teaching others to build
+Heading: Study dashboards with 20 friends
+I walked 20 friends through building their own study dashboards as HTML pages with Claude, then gave them the prompts so they could keep doing it without me.
+They used them for their own classes: studying for exams, and having Claude work through their own course material in the browser to build study materials around it.
+
 ## Section: Earlier build
 Earlier build
 ### Resume tool
@@ -287,3 +295,4 @@ annakateblack7@gmail.com · LinkedIn · GitHub
 - How the Locker story started: she reached out to companies whose products she used, and Locker's team was the one that responded.
 - Favorite class: BUSN 4400 at UGA with Professor Kane, a three-hour AI discussion class. It drew people who wanted to build, push back, and debate AI news and ethics, and everyone pushed each other. It was not a typical classroom, which is why she loved it.
 - Food hot take: she believes anyone can learn to like any food if they keep trying it and work to appreciate it. Pickles, wasabi and matcha all started as foods she didn't like but wanted to, and now she loves all three.
+- Teaching others: she walked 20 friends through building their own AI study dashboards as HTML pages with Claude, giving them both a walkthrough and the prompts. They used them for their own classes, including studying for exams and having Claude work through their course material in the browser. She didn't keep a copy of the prompts, so they aren't published.

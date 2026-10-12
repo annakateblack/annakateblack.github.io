@@ -4,7 +4,7 @@ Everything below is public: the text of Anna Kate Black's portfolio site, then a
 ## Section: Introduction
 Finance, University of Georgia · Certificate in Artificial Intelligence for Business · May 2027Now: Agentic AI Research Fellow at UGA, with Professor Gerald Kane
 Anna Kate Black
-I build AI workflows around problems I can see up close, then check whether they actually work. Claude writes most of my code. My part is choosing the problem, setting the rules the system has to follow, testing it in real use, and being clear about what the results do and don't show.
+I'm curious about what it takes for AI to actually get used at work: finding where it helps, building something that works, and getting people to adopt it. I build AI workflows around problems I can see up close, then check whether they actually work. Claude writes most of my code. My part is choosing the problem, setting the rules the system has to follow, testing it in real use, and being clear about what the results do and don't show.
 annakateblack7@gmail.com LinkedIn GitHub
 
 ## Section: In 30 seconds
